@@ -1,0 +1,67 @@
+/* Navbar Component Styling */
+.navbar {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px;
+}
+
+.navbar-logo a {
+  color: rgb(38, 33, 33);
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.navbar-items {
+  list-style-type: none;
+  display: flex;
+  gap: 15px;
+}
+
+.navbar-items li {
+  display: inline-block;
+}
+
+.navbar-items a {
+  color: rgb(39, 31, 31);
+  text-decoration: none;
+  padding: 8px 12px;
+  transition: color 0.3s ease;
+  font-size: 14px;
+}
+
+.navbar-items a:hover {
+  color: #f0c14b;
+}
+
+.navbar-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-adopt, .btn-donate {
+  padding: 8px 16px;
+  border: none;
+  font-size: 14px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.btn-adopt {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.btn-donate {
+  background-color: #f44336;
+  color: white;
+}
+
+.btn-adopt:hover, .btn-donate:hover {
+  opacity: 0.9;
+}
+
+.navbar {
+  margin-top: 30px; /* Adjust this value based on Links' height */
+}
