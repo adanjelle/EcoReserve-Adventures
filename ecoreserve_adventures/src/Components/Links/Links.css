@@ -8,16 +8,20 @@ body {
   margin: 0;
   padding: 0;
   background-image: url(https://www.sheldrickwildlifetrust.org/assets/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBK3RYQVE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--2255f9df6db27292bc314f3db70959c1d0a0cf8b/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9LYzJGMlpYSjdDam9LYzNSeWFYQlVPaEZ1YjE5emRXSnpZVzF3YkdWVU9nNXBiblJsY214aFkyVlVPaFJ2Y0hScGJXbDZaVjlqYjJScGJtZFVPZ3h4ZFdGc2FYUjVhVlU2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKc0Iya0NzQVE9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--a3beae31998acce4034ea21699f81133350de539/5-protecting-kenyas-wildlife_1.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .navbar-link {
-  background-color: black;
-  padding: 3px 20px;
+  background-color: rgba(28, 23, 23, 0.281);
+  padding: 10px 20px;
+  overflow: hidden;
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-
+  z-index: 1000; /* Ensure it stays on top */
 }
 
 .navbar-links {
@@ -37,7 +41,7 @@ body {
   color: white;
   text-decoration: none;
   font-style: oblique;
-  font-size: 10px;
+  font-size: 12px;
   padding: 5px 10px;
   transition: color 0.3s ease;
   display: flex;
@@ -45,10 +49,43 @@ body {
 }
 
 .navbar-links a i {
-  margin-right: 5px; /* Space between icon and text */
-  font-size: 15px; /* Increase icon size */
+  margin-right: 5px;
+  font-size: 16px;
 }
 
 .navbar-links a:hover {
   color: #f0c14b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar-links {
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 20px;
+  }
+
+  .navbar-links a {
+    font-size: 10px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-links {
+    gap: 5px;
+  }
+
+  .navbar-links a {
+    font-size: 9px;
+    padding: 5px 8px;
+  }
+
+  .navbar-links a i {
+    font-size: 12px; /* Decrease icon size for small screens */
+  }
+
+  .navbar-link {
+    padding: 5px 10px; /* Reduce padding on very small screens */
+  }
 }

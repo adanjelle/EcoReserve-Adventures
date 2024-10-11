@@ -1,49 +1,106 @@
 .home-container {
   height: 100vh;
-  width: 100%;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background-image 1s ease-in-out;
+  color: white;
+  transition: background-image 1s ease-in-out; /* Fade effect for the background */
+  padding: 20px; /* Add padding for small screens */
 }
 
 .overlay {
   text-align: center;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  animation: fade-in 1s ease-in-out; 
+  max-width: 600px; 
+  margin: auto;
 }
 
-h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
+.overlay h1 {
+  font-family: 'Webkins', sans-serif;
+  font-size: 4.5rem; 
+  line-height: 1.2; 
+  animation: fade-in 1s ease-in-out; 
+  opacity: 0; 
+  animation-fill-mode: forwards; 
 }
 
-p {
-  font-size: 1.5rem;
-}
+.excc p{
+  font-family: 'Webkins', sans-serif;
+  font-size: .2rem; 
 
-.dots {
-  display: flex;
-  justify-content: center;  /* Center the dots */
+  opacity: 0;
+  animation-fill-mode: forwards;
   margin-top: 20px;
 }
 
-.dot {
+.loop-button,
+.loop-buttons {
+  font-family: 'Webkins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: wheat;
+  background-color: transparent;
+  padding: 10px 20px; /* Make padding larger for better touch targets */
+  border-radius: 5px;
   cursor: pointer;
-  padding: 10px;
-  margin: 0 5px;  /* Adjust margin for even spacing */
-  font-size: 20px;
-  transition: transform 0.3s ease;
+  margin-top: 20px;
+  animation: fade-in 1s ease-in-out;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  transition: background-color 0.3s ease;
+  gap: 20px; 
 }
 
-.dot:hover {
-  transform: scale(1.2);
+.loop-button:hover,
+.loop-buttons:hover {
+  background-color: white; /* Slightly darker shade on hover */
 }
 
-.dot.active {
-  color: red;
+/* Responsive styles */
+@media (max-width: 768px) {
+  .overlay em {
+    font-size: 3rem; /* Reduce font size on smaller screens */
+  }
+
+  .excc em {
+    font-size: 1rem; /* Adjust excc font size */
+  }
+
+  .loop-button,
+  .loop-buttons {
+    font-size: 1.2rem; /* Smaller buttons for mobile */
+    padding: 8px 16px;
+    gap: 20px;  /* Adjust padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .overlay em {
+    font-size: 2.5rem; /* Further reduce for very small screens */
+  }
+
+  .excc em {
+    font-size: 0.9rem; /* Further adjust excc font size */
+  }
+
+  .loop-button,
+  .loop-buttons {
+    font-size: 1rem; /* Smaller buttons for mobile */
+    padding: 6px 12px;
+      gap: 20px; 
+  /* Adjust padding */
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

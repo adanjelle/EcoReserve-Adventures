@@ -1,22 +1,23 @@
-/* Navbar Component Styling */
 .navbar {
-  background-color: white;
+  background-color: #27ae60;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 20px;
+  padding: 30px 20px;
+  position: relative; /* Required for positioning of absolute elements */
 }
 
-.navbar-logo a {
-  color: rgb(38, 33, 33);
-  text-decoration: none;
-  font-size: 24px;
+.navbar-toggle {
+  display: none; /* Hide the toggle button by default */
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .navbar-items {
   list-style-type: none;
   display: flex;
-  gap: 15px;
+  gap: 10px;
 }
 
 .navbar-items li {
@@ -24,11 +25,14 @@
 }
 
 .navbar-items a {
-  color: rgb(39, 31, 31);
+  color: white;
   text-decoration: none;
-  padding: 8px 12px;
+  padding: 13px 13px;
   transition: color 0.3s ease;
-  font-size: 14px;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Gap between icon and text */
 }
 
 .navbar-items a:hover {
@@ -49,7 +53,7 @@
 }
 
 .btn-adopt {
-  background-color: #4CAF50;
+  background-color: #9db29d;
   color: white;
 }
 
@@ -62,6 +66,40 @@
   opacity: 0.9;
 }
 
-.navbar {
-  margin-top: 30px; /* Adjust this value based on Links' height */
+.icon-text {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navbar-items {
+    display: none; /* Hide the items by default */
+    flex-direction: column; /* Stack items vertically */
+    position: absolute; /* Position them absolutely */
+    top: 80px; /* Adjust based on navbar height */
+    left: 0;
+    right: 0;
+    background-color: #27ae60; /* Match the navbar background */
+    z-index: 1; /* Ensure it appears above other content */
+  }
+
+  .navbar-items.open {
+    display: flex; /* Show the items when open */
+  }
+
+  .navbar-toggle {
+    display: block; /* Show toggle button on mobile */
+    z-index: 2; /* Ensure it appears above navbar */
+  }
+
+  .navbar-buttons {
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px; /* Space between buttons */
+  }
+
+  .btn-adopt, .btn-donate {
+    width: 100%; /* Make buttons full width */
+  }
 }

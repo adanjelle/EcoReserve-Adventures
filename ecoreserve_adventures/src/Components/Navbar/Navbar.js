@@ -1,21 +1,36 @@
 import React from 'react';
 import './Navbar.css';
+import image2 from '../../Components/images/image2.png';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <a href="#home">LOGO</a>
+        <Link to="/"><img src={image2} style={{height:"85px", width:"85px",borderRadius:"50%"}} alt="Logo"/></Link>
       </div>
       <ul className="navbar-items">
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#adopt-orphan">Adopt an Orphan</a></li>
-        <li><a href="#news">News</a></li>
-        <li><a href="#get-involve">Get Involved</a></li>
-        <li><a href="#social-feed">Social Feed</a></li>
-        <li><a href="#shop">Shop</a></li>
-        <li><a href="#visiting">Visiting</a></li>
-        <li><a href="#about">About</a></li>
+        <li>
+          <Link to="/project"> Projects<i className="fa fa-angle-down"></i></Link>
+        </li>
+        <li>
+          <Link to="/adopt">Adopt an Orphan<i className="fa fa-angle-down"></i> </Link>
+        </li>
+        <li>
+          <Link to="/new"> News<i className="fa fa-angle-down"></i></Link>
+        </li>
+        <li>
+          <Link to="/get involve"> Get Involved<i className="fa fa-angle-down"></i></Link>
+        </li>
+        <li>
+          <Link to="/social">Social Feed<i className="fa fa-angle-down"></i></Link>
+        </li>
+        <li>
+          <Link to="/visiting"> Visiting<i className="fa fa-angle-down"></i></Link>
+        </li>
+        <li>
+          <Link to="/about"> About<i className="fa fa-angle-down"></i></Link>
+        </li>
       </ul>
       <div className="navbar-buttons">
         <button className="btn-adopt">Adopt</button>
