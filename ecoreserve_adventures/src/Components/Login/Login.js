@@ -41,7 +41,7 @@ function Login() {
             <div className="relative">
               <div className="w-full max-w-xl xl:w-full xl:mx-auto xl:pr-24 xl:max-w-xl">
                 <h3 className="text-4xl font-bold text-white">
-                  Join 35k+ web professionals & <br className="hidden xl:block" />
+                  Join Wildlife Rescure Hub & <br className="hidden xl:block" />
                   build your website
                 </h3>
               </div>
@@ -50,7 +50,7 @@ function Login() {
           {/* Login Form */}
           <div className="flex items-center justify-center px-4 py-10 bg-white sm:px-6 lg:px-8 sm:py-16 lg:py-24">
             <div className="xl:w-full xl:max-w-sm 2xl:max-w-md xl:mx-auto">
-              <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl">Sign in to Celebration</h2>
+              <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl">Sign In</h2>
               <p className="mt-2 text-base text-gray-600">
                 Don’t have an account?{' '}
                 <a href="#" className="font-medium text-blue-600 transition-all duration-200 hover:text-blue-700 focus:text-blue-700 hover:underline">

@@ -1,105 +1,97 @@
+/* General Navbar styles */
 .navbar {
-  background-color: #27ae60;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 20px;
-  position: relative; /* Required for positioning of absolute elements */
+  background-color: #19da79; /* Keep your existing navbar color */
+  padding: 20px;
+  position: relative;
 }
 
-.navbar-toggle {
-  display: none; /* Hide the toggle button by default */
-  background: none;
-  border: none;
-  cursor: pointer;
+.navbar-logo img {
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo img:hover {
+  transform: scale(1.05); /* Slight scaling on hover for logo */
 }
 
 .navbar-items {
-  list-style-type: none;
   display: flex;
-  gap: 10px;
+  list-style-type: none;
+  gap: 30px;
 }
 
 .navbar-items li {
-  display: inline-block;
+  position: relative;
 }
 
-.navbar-items a {
-  color: white;
-  text-decoration: none;
-  padding: 13px 13px;
-  transition: color 0.3s ease;
-  font-size: 1em;
+/* Icon Text Styles */
+.icon-text {
   display: flex;
   align-items: center;
-  gap: 5px; /* Gap between icon and text */
+  color: #fff; /* Maintain original text color */
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
-.navbar-items a:hover {
-  color: #f0c14b;
+.icon-text:hover {
+  color: #bdb3b3; /* Add a hover color for text, no layout displacement */
 }
 
+.icon-text i {
+  margin-left: 8px;
+}
+
+/* Dropdown Styles */
+ul.absolute {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease;
+  transform: translateY(10px);
+  background-color: #ffffff; /* Keep the dropdown background white */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  position: absolute; /* Ensure dropdown appears above other content */
+  z-index: 1000; /* Bring dropdown above other elements */
+}
+
+.relative:hover ul.absolute {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Dropdown Items */
+ul.absolute li {
+  padding: 12px;
+  color: #333; /* Keep text color for dropdown items */
+  transition: background-color 0.3s ease;
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+ul.absolute li:hover {
+  background-color: #f1f1f1; /* Highlight effect for dropdown items */
+}
+
+/* Button Styles */
 .navbar-buttons {
   display: flex;
   gap: 10px;
 }
 
 .btn-adopt, .btn-donate {
-  padding: 8px 16px;
+  background-color: #f8e5b8; /* Choose a suitable button color */
   border: none;
-  font-size: 14px;
-  border-radius: 2px;
+  border-radius: 5px;
+  padding: 10px 20px;
   cursor: pointer;
-}
-
-.btn-adopt {
-  background-color: #9db29d;
-  color: white;
-}
-
-.btn-donate {
-  background-color: #f44336;
-  color: white;
+  transition: background-color 0.3s ease;
 }
 
 .btn-adopt:hover, .btn-donate:hover {
-  opacity: 0.9;
-}
-
-.icon-text {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .navbar-items {
-    display: none; /* Hide the items by default */
-    flex-direction: column; /* Stack items vertically */
-    position: absolute; /* Position them absolutely */
-    top: 80px; /* Adjust based on navbar height */
-    left: 0;
-    right: 0;
-    background-color: #27ae60; /* Match the navbar background */
-    z-index: 1; /* Ensure it appears above other content */
-  }
-
-  .navbar-items.open {
-    display: flex; /* Show the items when open */
-  }
-
-  .navbar-toggle {
-    display: block; /* Show toggle button on mobile */
-    z-index: 2; /* Ensure it appears above navbar */
-  }
-
-  .navbar-buttons {
-    flex-direction: column; /* Stack buttons vertically */
-    gap: 10px; /* Space between buttons */
-  }
-
-  .btn-adopt, .btn-donate {
-    width: 100%; /* Make buttons full width */
-  }
+  background-color: #e0c68c; /* Darken button on hover */
 }
